@@ -27,7 +27,7 @@ class DirectoryUtils {
     Directory? directory;
     if (Platform.isLinux) {
       try {
-        return cacheHome;
+        return await getApplicationCacheDirectory();
       } catch (e) {
         logger.warning("Failed to get cacheHome: $e");
       }
